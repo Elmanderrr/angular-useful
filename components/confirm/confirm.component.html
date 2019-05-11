@@ -1,0 +1,16 @@
+<div class="modal-body">
+    <div class="confirm-text sf-bold">
+        <span *ngIf="confirmMessage">{{confirmMessage}}</span>
+        <span *ngIf="!confirmMessage" translate>globals.text.confirm</span>
+    </div>
+    <div class="buttons text-center">
+        <button class="btn btn-secondary confirm-button m-r-md" (click)="activeModal.close()">
+            <span *ngIf="submitBtnText">{{submitBtnText}}</span>
+            <span *ngIf="!submitBtnText" translate>globals.text.yes</span>
+        </button>
+        <button class="btn btn-default cancel-button" (click)="activeModal.dismiss()">
+            <span *ngIf="cancelBtnText">{{cancelBtnText}}</span>
+            <span *ngIf="!cancelBtnText" translate>globals.text.cancel</span>
+        </button>
+    </div>
+</div>

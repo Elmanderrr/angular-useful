@@ -1,0 +1,14 @@
+<ul class="custom-tag-autocomplete-list" #autcompleteListEl *ngIf="list.length">
+    <ng-container *ngFor="let item of list">
+        <li class="autocomplete-item" *ngIf="item" [attr.data-name]="item"
+            (mouseenter)="onHover(item)"
+            [class.active]="highlightedKey === item"
+            (click)="onAutocompleteItemClick(item)">
+            {{item}}
+        </li>
+        <li class="empty-autocomplete" *ngIf="item === null">
+            <span translate>globals.text.noAutocompleteMatches</span>
+        </li>
+    </ng-container>
+
+</ul>

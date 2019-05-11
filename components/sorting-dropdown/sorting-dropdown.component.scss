@@ -1,0 +1,37 @@
+@import "../../../core/sass/toolkit/functions";
+@import "../../../core/sass/toolkit/variables";
+
+.dropdown {
+
+    .sort-arrow {
+        position: relative;
+        margin-right: 4px;
+        font-size: 12px;
+    }
+
+    .btn-outline-secondary {
+        min-width: 176px;
+        padding: 4px 30px 5px 11px;
+        height: auto;
+    }
+
+    &.show {
+        .btn {
+            color: $app-turquoise;
+        }
+    }
+
+    .dropdown-menu {
+        min-width: 176px;
+    }
+
+
+    .btn {
+        border-color: transparent;
+        background-color: $app-grey-lter;
+
+        &:hover {
+            border-color: $app-grey-dk;
+        }
+    }
+}

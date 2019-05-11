@@ -1,0 +1,30 @@
+<div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-secondary sf-reg"  ngbDropdownToggle>
+        <span *ngIf="sdDefaultSort">
+            <span *ngIf="sdDefaultSort.customSort">{{ 'globals.text.selectSort' | translate }}</span>
+
+            <span *ngIf="!sdDefaultSort.customSort">
+                <i class="svg-icon icon-thin-arrow-up sort-arrow"
+                   [class.rotate-180]="sdDefaultSort.sortDirection === 'ASC'"></i>
+
+                <span>{{ sdDefaultSort._translateName | translate }}</span>
+                <span class="caret" *ngIf="sdDefaultSort"></span>
+            </span>
+        </span>
+        <span *ngIf="!sdDefaultSort">
+            <span translate>globals.text.sort</span>
+        </span>
+    </button>
+
+    <div ngbDropdownMenu>
+        <ng-container *ngFor="let sort of sdModel">
+            <button class="dropdown-item"
+                    *renderFor="sort._renderFor"
+                    [class.active]="sort.field === sdDefaultSort?.field"
+                    (click)="sortBy(sort)" >
+                <span>{{ sort._translateName | translate }} </span>
+            </button>
+        </ng-container>
+
+    </div>
+</div>

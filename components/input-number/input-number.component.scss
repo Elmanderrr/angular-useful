@@ -1,0 +1,60 @@
+$up-down: '/assets/svg/up-down.svg';
+
+:host {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+//hide default arrows from input type number
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    width: 72px;
+
+    input {
+        width: 100%;
+        height: 32px;
+        padding-right: 20px;
+    }
+
+    .steps {
+        position: absolute;
+        height: 24px;
+        width: 12px;
+        top: 5px;
+        right: 8px;
+
+        .step {
+            display: inline-block;
+            width: 11px;
+            height: 8px;
+            background: url($up-down) no-repeat 0 0;
+            cursor: pointer;
+
+            &.step-down {
+                background-position: 0 -16px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            &.step-up {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+}
+

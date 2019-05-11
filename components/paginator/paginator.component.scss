@@ -1,0 +1,55 @@
+@import "../../../core/sass/toolkit/functions";
+@import "../../../core/sass/toolkit/variables";
+@import "../../../core/sass/toolkit/mixins/transition";
+
+:host {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.app-paginator {
+
+    .page-input {
+        width: 48px;
+        height: 32px;
+        line-height: 1;
+        padding: 0 5px;
+        text-align: center;
+        display: inline-block;
+        margin: 0 8px;
+    }
+
+    .arrows {
+        margin-left: 29px;
+
+        .arrow {
+            display: inline-block;
+            background: $app-grey;
+            padding: 4px 3px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            @include transition(background .3s, border-color .3s);
+
+            &:first-child {
+                margin-right: 2px;
+            }
+
+            &:hover {
+                border-color: $app-turquoise;
+            }
+
+            &:active {
+                background: $app-turquoise;
+
+                ::ng-deep .svg-icon {
+                    color: $app-white;
+                }
+            }
+
+            .svg-icon {
+                font-size: 8px;
+                vertical-align: middle;
+            }
+        }
+    }
+}

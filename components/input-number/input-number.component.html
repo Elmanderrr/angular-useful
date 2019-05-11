@@ -1,0 +1,22 @@
+<div class="number-input pos-rlt inline">
+    <input class="form-control" type="number" autocomplete="off"
+           [min]="min"
+           [max]="max"
+           [name]="name"
+           [(ngModel)]="ngModel"
+           (focus)="inputFocus($event)"
+           (blur)="inputBlur($event)"
+           (ngModelChange)="onChanged(input)" #input>
+    <div class="steps">
+        <span class="step step-up"
+              (click)="onChanged(input, 'up')"
+              (mousedown)="onMouseDown(input, 'up')"
+              (mouseleave)="onMouseLeave()"
+              (mouseup)="onMouseUp(input)"></span>
+        <span class="step step-down"
+              (click)="onChanged(input, 'down')"
+              (mousedown)="onMouseDown(input, 'down')"
+              (mouseleave)="onMouseLeave()"
+              (mouseup)="onMouseUp(input)"></span>
+    </div>
+</div>

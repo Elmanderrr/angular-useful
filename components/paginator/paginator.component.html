@@ -1,0 +1,16 @@
+<div class="inline app-paginator">
+    <span translate>globals.text.page</span>
+    <form class="inline" (ngSubmit)="onSubmit(pageInput)">
+        <input type="text" autocomplete="off" #pageInput class="form-control page-input" name="paginator-page" [(ngModel)]="page">
+    </form>
+    <span translate>globals.text.from</span>
+    <span> {{maxPageNumber}}</span>
+    <div class="arrows inline">
+        <span class="prev arrow cursor-pointer" (click)="prevPage()">
+            <i class="svg-icon icon-arrow rotate-90"></i>
+        </span>
+        <span class="next arrow cursor-pointer" (click)="nextPage()">
+            <i class="svg-icon icon-arrow rotate-90neg"></i>
+        </span>
+    </div>
+</div>
